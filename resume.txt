@@ -1,0 +1,106 @@
+<DOCTYPE html>
+<html>
+    <head>
+         <title>RESUME</title>
+         <link rel="stylesheet" href="my.css"/>
+         <style>
+         h1{
+           color:purple;}
+         </style>
+    </head>
+    <body bgcolor="sky blue">
+    <center>
+    <h1><b>MY RESUME</b></h1>
+    <hr></center>
+    <img src = "suji2.jpg" witdth="200" height="150">
+    <div>
+         <p><b>NAME : SUJI.K</b></p>
+         <p><b>EMAIL ID : sujik.22it@kongu.edu</b></p>
+    </div>
+         <hr>
+         <h4 style="color:red;"><b><u> OBJECTIVES </u><b></h4>
+         <p>
+         Looking for a challenging role in a reputed company to utilize my engineering skill that can contribute to the company’s growth as well as enhance my knowledge by exploring new
+         things.
+         </p>
+         <hr>
+         <h4 style="color:red;"><b><u>EDUCATIONAL QUALIFICATION</u></b></h4>
+         <table border=1>
+              <tr>
+                  <th>Name of the course</th>
+                  <th>Name of the educational institution</th>
+                  <th>percentage</th>
+                  <th>passing year</th>
+             </tr>
+             <tr>
+                  <td>10th</td>
+                  <td>NRKN high school</td>
+                  <td>80%</td>
+                  <td>2020</td>
+             </tr>
+             <tr>
+                  <td>11th</td>
+                  <td>KONGU metric higher secondary school</td>
+                  <td>83%</td>
+                  <td>2022</td>
+             </tr>
+           </table>
+           <hr>
+           <h4 style="color:red;"><b><u>CURRENT PROFILE</u></b></h4>
+           <table border=1>
+             <tr>
+                  <th>Name of the course</th>
+                  <th>Name of the educational institution</th>
+                  <th>1st semester CGPA</th>
+                  <th>2nd semester CGPA</th>
+             </tr>
+
+             <tr>
+                  <td>b.tech IT</td>
+                  <td>KONGU ENGINEERING COLLEGE</td>
+                  <td>7.38</td>
+                  <td>7.40</td>
+             </tr>
+	     </table>
+             <hr>
+             <h4 style="color:red;"><b><u>AREA OF INTEREST</u></b></h4>
+             <ul>
+                 <li>DataBase Management system</li>
+                 <li>machine learning</li>
+                 <li>block chine technology</li>
+             </ul>
+             <hr>
+             <h4 style="color:red;"><b><u>TECHNICAL SKILLS</u></b></h4>
+             <ul>
+                <li>C programming</li>
+                 <li>JAVA programming</li>
+                 <li>Data Structure</li>
+                 <li>python programming</li>
+             </ul>
+             <hr>
+             <h4 style="color:red;"><b><u>PAPER PRESENTATION</u></b><h4>
+             <ol>
+                <li>presented a paper on EXTENDED REALITY and won 1st price in SIGNIN'23 held at KONGO ENGINEERING COLLEGE</li>
+                <li>presented a paper on SELF DRIVING CAR in EXODIA held at KONGO ENGINEERING COLLEGE</li>
+                <li>presented a paper on METAVERSE in RANGUTSAV'24 held at KSR college</li>
+            </ol>
+            <h4 style="color:red;"><u>MEMBERS OF A PROFESSIONAL BODY</u></h4>
+<ol>
+<li>Members of the ISTE club</li>
+<li>Member of the Robotics club</li>
+<li>Member of the ERPC club</li>
+</ol>
+<hr>
+<h4 style="color:red;"><u>DECLARATION</u></h4>
+<p>I hereby declare that the above given details are true to my knowledge and if found invalid i shall be excluded from further process</p>
+</div>
+<hr>
+<center>
+<h3>THANK YOU!</h3>
+</center>
+            
+
+                 
+             
+    </body>
+</html>
