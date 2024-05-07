@@ -1,0 +1,15 @@
+<DOCTYPE html>
+<html>
+    <head>
+         <title><b>RESUME</b></title>
+    </head>
+    <body>
+         <h1><b>NAME : SUJI.K</b></h1>
+         <h2><b>EMAIL ID : sujik.22it@kongu.edu</b></h2>
+         <h3><b> objectives <b></h3>
+         <p>
+         Looking for a challenging role in a reputed company to utilize my engineering skill that can contribute to the company’s growth as well as enhance my knowledge by exploring new
+         things.
+         </p>
+    </body>
+</html>
