@@ -1,0 +1,28 @@
+.navabar{
+    overflow:hidden;
+    background-color:black;
+}
+.navbar a{
+    float:left;
+    font-size:16 px;
+    color:red;
+
+}
+.dropdown{
+    float:left;
+    overflow:hidden;
+}
+.dropdown-content{
+    display:none;
+    z-index:1;
+
+}
+.dropdown-content a{
+    display:block;
+}
+.dropdown:hover .dropdown-content{
+    display:block;
+}
+.navbar a:hover, .dropdown:hover .dropbtn{
+    background-color:red;
+}

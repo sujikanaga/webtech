@@ -1,0 +1,190 @@
+
+<html>
+   <head>
+    <title>Form validation</title>
+   </head> 
+<body>
+   <div class ="container1">
+        <form action="#" method="post" onsubmit="return validateForm();">
+            <h3><b>Registration form</b></h3>
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name"><br><br>
+            
+            <label>Gender:</label><br>
+            <input type="radio" id="gender-male" name="gender" value="male">
+            <label for="gender-male">Male</label><br>
+            <input type="radio" id="gender-female" name="gender" value="female">
+            <label for="gender-female">Female</label><br><br>
+    
+            <label>Spoken Languages:</label><br>
+            <input type="checkbox" id="english" name="language" value="english">
+            <label for="english">English</label><br>
+            <input type="checkbox" id="spanish" name="language" value="spanish">
+            <label for="spanish">Spanish</label><br>
+            <input type="checkbox" id="french" name="language" value="french">
+            <label for="french">French</label><br>
+            
+            <br>
+            <label for="address">Address:</label><br>
+            <textarea id="address" name="address" rows="4" cols="50"></textarea><br><br>
+            
+            <label for="district">District:</label><br>
+            <select id="district" name="district">
+                <option value="">Please select district</option>
+                <option value="district1">ERODE</option>
+                <option value="district2">CHENNAI</option>
+                <option value="district3">SALEM</option>
+                <option value="district4">NAMAKKAL</option>
+            </select><br><br>
+            <label for="phone">Phone Number:</label><br>
+            <input type="text" id="phone" name="phone"><br><br>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email"><br><br>
+            <label for="username">Username:</label><br>
+            <input type="text" id="username" name="username"><br><br>
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password"><br><br>
+            <input type="submit" value="submit">
+        </div>
+        </form>
+        <script>
+            function validateForm()
+             {
+                if( validateName() && validateGender() && validateLanguage() && validateAddress() && validateDistrict() && validatePhoneNumber() && validateEmail() && validateUsername() && validatePassword())
+                {
+                    window.location.href="success.html";
+                    return false;
+                }
+                return false;
+            }
+    
+            function validateName()
+             {
+                var nameField = document.getElementById("name");
+                var name = nameField.value.trim(); 
+                var regex = /^[A-Za-z\s]+$/;
+                
+                if (!regex.test(name)) 
+                {
+                    alert("Please enter a valid name with alphabets and spaces only.");
+                    nameField.focus();
+                    return false;
+                }
+                
+                return true;
+            }
+            function validateGender() 
+            {
+                var genderMale = document.getElementById("gender-male");
+                var genderFemale = document.getElementById("gender-female");
+    
+                if (!genderMale.checked && !genderFemale.checked) {
+                    alert("Please select your gender.");
+                    return false;
+                }
+    
+                return true;
+            }
+    
+            function validateLanguage() 
+            {
+                var languageCheckboxes = document.querySelectorAll('input[name="language"]:checked');
+    
+                if (languageCheckboxes.length === 0)
+                 {
+                    alert("Please select at least one spoken language.");
+                    return false;
+                }
+    
+                return true;
+            }
+            function validateAddress() 
+            {
+                var addressField = document.getElementById("address");
+                var address = addressField.value.trim();
+    
+                if (address.length === 0) 
+                {
+                    alert("Please enter your address.");
+                    addressField.focus();
+                    return false;
+                }
+    
+                return true;
+            }
+            function validateDistrict() 
+            {
+                var districtSelect = document.getElementById("district");
+                var selectedDistrict = districtSelect.value;
+    
+                if (selectedDistrict === "") 
+                {
+                    alert("Please select your district.");
+                    return false;
+                }
+    
+                return true;
+            }
+    
+            function validatePhoneNumber() 
+            {
+                var phoneNumberField = document.getElementById("phone");
+                var phoneNumber = phoneNumberField.value.trim(); 
+                var regex = /^\d{10}$/;
+    
+                if (!regex.test(phoneNumber)) {
+                    alert("Please enter a valid 10-digit phone number.");
+                    phoneNumberField.focus();
+                    return false;
+                }
+    
+                return true;
+            }
+            function validateEmail() 
+            {
+                var emailField = document.getElementById("email");
+                var email = emailField.value.trim(); //
+                var regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    
+                if (!regex.test(email)) {
+                    alert("Please enter a valid email address.");
+                    emailField.focus();
+                    return false;
+                }
+    
+                return true;
+            }
+            function validateUsername() 
+            {
+                var usernameField = document.getElementById("username");
+                var username = usernameField.value.trim(); 
+                var regex = /^[A-Za-z][A-Za-z_]*$/;
+    
+                if (!regex.test(username)) {
+                    alert("Please enter a valid username that starts with alphabets and can contain alphabets and underscores only.");
+                    usernameField.focus();
+                    return false;
+                }
+    
+                return true;
+            }
+            function validatePassword() 
+            {
+                var passwordField = document.getElementById("password");
+                var password = passwordField.value.trim();
+                var regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+])[A-Za-z\d!@#$%^&*()_+]{8,}$/;
+    
+                if (!regex.test(password)) 
+                {
+    
+                    alert("Please enter a valid password. It should contain at least one uppercase letter, one lowercase letter, one number, one special character, and have a length of 8.");
+                    passwordField.focus();
+                    return false;
+                }
+    
+                return true;
+            }
+        </script>
+    
+</body>
+</html>

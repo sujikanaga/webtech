@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IEPC Consultancy Calculator</title>
+ 
+
+<style>
+    
+    .center {
+  margin:auto;
+  width: 60%;
+  
+  padding: 10px;
+}
+h1{
+    text-align: center;
+}
+body{
+    background-image: url("tech3.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color:black;
+    font-size: 30px;
+    text-align: center;
+
+}
+  
+  form {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input[type="text"],
+  input[type="number"],
+  select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  button {
+    width: 100%;
+    padding: 10px;
+    background-color: #de5709;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  
+  button:hover {
+    background-color: #740606;
+  }
+  
+  #result {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+ 
+</style>
+</head>
+<body >
+<div class="center">
+<h1>IEPC Consultancy Calculator</h1>
+
+<label for="organization">Name of Industary:</label>
+<input type="text" id="organization" placeholder="Enter Industary name"><br><br>
+
+<label>Nature of Consultancy:</label>
+<label><input type="radio" name="nature" value="Testing"> Testing</label>
+<label><input type="radio" name="nature" value="Trainers"> Trainers</label>
+<label><input type="radio" name="nature" value="Consultancy"> Consultancy</label><br><br>
+
+
+<label for="amount">Amount:</label>
+<input type="number" id="amount" placeholder="Enter amount"><br><br>
+
+<label for="faculty">Number of faculty involved: </label>
+<select id="faculty" name="faculty">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+</select><br><br>
+
+<button  onclick="calculateGST()" >Calculate GST</button>
+
+<hr>
+</div>
+<div id="result"></div>
+
+<script>
+function calculateGST() {
+    var organization = document.getElementById("organization").value;
+    var natureRadios = document.getElementsByName("nature");
+    var nature;
+    for (var i = 0; i < natureRadios.length; i++) 
+    {
+        if (natureRadios[i].checked) 
+        {
+            nature = natureRadios[i].value;
+            break;
+        }
+    }
+    var amount = Number(document.getElementById("amount").value);
+    var nfaculty = Number(document.getElementById("faculty").value);
+
+    if (isNaN(amount))
+     {
+        alert("Please enter a valid amount.");
+        return;
+    }
+
+    var amtk = amount * 0.30;
+    var amtf = amount * 0.70;
+    var peramount = amtf / nfaculty;
+    var gstAmount = amount * 0.18;
+    var totalAmount = amount + gstAmount;
+
+    var result = "<strong>Industry Name:</strong> " + organization + "<br>";
+    result += "<strong>Nature of Consultancy:</strong> " + nature + "<br>";
+    result += "<strong>Amount:</strong> " + amount+ "<br>";
+    result += "<strong>To the KEC:</strong> " + amtk.toFixed(2) + "<br>";
+    result += "<strong>To the faculty:</strong> " + amtf.toFixed(2) + "<br>";
+    result += "<strong>Per faculty:</strong> " + peramount.toFixed(2)+"<br>";
+    result += "<strong>GST (18%):</strong> " + gstAmount.toFixed(2) + "<br>";
+    result += "<strong>Total Amount (including GST):</strong> " + totalAmount.toFixed(2) + "<br>";
+
+    document.getElementById("result").innerHTML = result;
+}
+</script>
+</div>
+</body>
+</html>

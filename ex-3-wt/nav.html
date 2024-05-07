@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IEPC Consultancy Calculator</title>
+<style>
+ .center {
+  margin:auto;
+  width: 60%;
+  
+  padding: 10px;
+}
+h1{
+    text-align: center;
+}
+body{
+    background-image: url("bg1.jpg");
+    color:antiquewhite;
+    font-size: 30px;
+}
+
+  
+</style>
+</head>
+<body >
+<div class="center">
+<h1>IEPC Consultancy Calculator</h1>
+
+<label for="organization">Organization Name:</label>
+<input type="text" id="organization" placeholder="Enter organization name"><br><br>
+
+<label>Nature of Consultancy:</label>
+<label><input type="radio" name="nature" value="Testing"> Testing</label>
+<label><input type="radio" name="nature" value="Trainers"> Trainers</label>
+<label><input type="radio" name="nature" value="Consultancy"> Consultancy</label><br><br>
+
+<label for="amount">Amount:</label>
+<input type="number" id="amount" placeholder="Enter amount"><br><br>
+
+<label for="faculty">Number of faculty involved: </label>
+<select id="faculty" name="faculty">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+</select><br><br>
+
+<button onclick="calculateGST()">Calculate GST</button>
+
+<hr>
+
+<div id="result"></div>
+
+<script>
+function calculateGST() {
+    var organization = document.getElementById("organization").value;
+    var natureRadios = document.getElementsByName("nature");
+    var nature;
+    for (var i = 0; i < natureRadios.length; i++) {
+        if (natureRadios[i].checked) {
+            nature = natureRadios[i].value;
+            break;
+        }
+    }
+    var amount = Number(document.getElementById("amount").value);
+    var nfaculty = Number(document.getElementById("faculty").value);
+
+    if (isNaN(amount)) {
+        alert("Please enter a valid amount.");
+        return;
+    }
+
+    var amtk = amount * 0.30;
+    var amtf = amount * 0.70;
+    var peramount = amtf / nfaculty;
+    var gstAmount = amount * 0.18;
+    var totalAmount = amount + gstAmount;
+
+    var result = "<strong>Organization Name:</strong> " + organization + "<br>";
+    result += "<strong>Nature of Consultancy:</strong> " + nature + "<br>";
+    result += "<strong>Amount:</strong> " + amount+ "<br>";
+    result += "<strong>To the KEC:</strong> " + amtk.toFixed(2) + "<br>";
+    result += "<strong>To the faculty:</strong> " + amtf.toFixed(2) + "<br>";
+    result += "<strong>Per faculty:</strong> " + peramount.toFixed(2)+"<br>";
+    result += "<strong>GST (18%):</strong> " + gstAmount.toFixed(2) + "<br>";
+    result += "<strong>Total Amount (including GST):</strong> " + totalAmount.toFixed(2) + "<br>";
+
+    document.getElementById("result").innerHTML = result;
+}
+</script>
+</div>
+</body>
+</html>
