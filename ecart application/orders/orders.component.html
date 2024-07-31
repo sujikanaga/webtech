@@ -1,0 +1,8 @@
+<h2>Orders</h2>
+<div *ngFor="let order of orders">
+  <h3>{{ order.product.name }}</h3>
+  <p>{{ order.product.price | currency }}</p>
+  <p>Ordered by: {{ order.name }}</p>
+  <p>Address: {{ order.address }}</p>
+  <p>Payment Mode: {{ order.paymentMode }}</p>
+</div>
