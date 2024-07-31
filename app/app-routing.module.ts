@@ -1,12 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AboutComponent } from './about/about.component';
-import { ProductComponent } from './product/product.component';
-import { ContactComponent } from './contact/contact.component';
+import { DataTableComponent } from './data-table/data-table.component';
 
 const routes: Routes = [
-
-  {path:'about',component:AboutComponent},{path:'product',component:ProductComponent},{path:'contact',component:ContactComponent}
+  { path: 'data-table', component: DataTableComponent },
+  { path: '', redirectTo: '/data-table', pathMatch: 'full' }
 ];
 
 @NgModule({
